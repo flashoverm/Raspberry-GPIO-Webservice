@@ -23,6 +23,21 @@ def gpioChannelOff(channel):
 
 @app.route('/gpio/clear')
 def gpioClear():
+	GPIO.setwarnings(False)
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(4, GPIO.OUT, initial=False)
+	GPIO.setup(17, GPIO.OUT, initial=False)
+	GPIO.setup(18, GPIO.OUT, initial=False)
+	GPIO.setup(21, GPIO.OUT, initial=False)
+	GPIO.setup(22, GPIO.OUT, initial=False)
+	GPIO.setup(23, GPIO.OUT, initial=False)
+	GPIO.setup(24, GPIO.OUT, initial=False)
+	GPIO.setup(10, GPIO.OUT, initial=False)
+	GPIO.setup(9, GPIO.OUT, initial=False)
+	GPIO.setup(25, GPIO.OUT, initial=False)
+	GPIO.setup(11, GPIO.OUT, initial=False)
+	GPIO.setup(8, GPIO.OUT, initial=False)
+	GPIO.setup(7, GPIO.OUT, initial=False)
 	GPIO.cleanup()
 	return 'GPIO channels cleared'
 
